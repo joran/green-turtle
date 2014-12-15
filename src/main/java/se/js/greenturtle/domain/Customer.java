@@ -1,4 +1,4 @@
-package se.js.greenturtle;
+package se.js.greenturtle.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -3,11 +3,11 @@ package se.js.greenturtle;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-@Component
-@ConfigurationProperties(prefix="gt.foo")
-public class FooSettings {
+@Configuration
+@ConfigurationProperties(prefix="gt.foo", ignoreUnknownFields=false)
+public class FooProperties {
 	@NotNull
 	private String yada;
 	@NotNull

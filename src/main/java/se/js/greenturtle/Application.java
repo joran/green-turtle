@@ -1,28 +1,24 @@
 package se.js.greenturtle;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
-import se.js.greenturtle.util.AccountUtil;
+import se.js.greenturtle.domain.Account;
+import se.js.greenturtle.domain.AccountRepository;
+import se.js.greenturtle.domain.util.AccountUtil;
 
 @Configuration
-@Import(RepositoryRestMvcConfiguration.class)
 @EnableAutoConfiguration
-@EnableConfigurationProperties
 @ComponentScan
 public class Application {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		
 		AccountRepository accounts = ctx.getBean(AccountRepository.class);
-		FooSettings fs = ctx.getBean(FooSettings.class);
+		FooProperties fs = ctx.getBean(FooProperties.class);
 		
 		for (int i = 0; i < 20; i++) {
 			accounts.save(AccountUtil.generateAccount());

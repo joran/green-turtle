@@ -1,4 +1,4 @@
-package se.js.greenturtle;
+package se.js.greenturtle.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

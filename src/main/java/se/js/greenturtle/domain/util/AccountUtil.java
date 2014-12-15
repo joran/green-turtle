@@ -1,4 +1,4 @@
-package se.js.greenturtle.util;
+package se.js.greenturtle.domain.util;
 
 import static java.lang.Math.floor;
 import static java.lang.Math.max;
@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import se.js.greenturtle.Account;
+import se.js.greenturtle.domain.Account;
 
 public class AccountUtil {
 	private final static long startTime = new GregorianCalendar(1970, 0, 1).getTime().getTime();
